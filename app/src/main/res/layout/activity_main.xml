@@ -10,14 +10,14 @@
         android:id="@+id/courseId"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="course_Id" />
+        android:text="Registration_ID" />
 
     <EditText
-        android:id="@+id/course"
+        android:id="@+id/name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/courseId"
-        android:text="course_name" />
+        android:text="Name" />
 
     <Button
         android:id="@+id/button"
@@ -25,9 +25,17 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="109dp"
+        android:layout_marginTop="231dp"
         android:onClick="addToDatabase"
         android:text="Save" />
+
+    <Spinner
+        android:id="@+id/spinner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="101dp" />
 
 
 </android.widget.RelativeLayout>

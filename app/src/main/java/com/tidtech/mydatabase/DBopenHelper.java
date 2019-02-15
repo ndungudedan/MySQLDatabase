@@ -15,6 +15,11 @@ public class DBopenHelper extends SQLiteOpenHelper {
     public static final String TABLE_NAME = "Courses";
     public static final String COLUMN_ID= "ID";
     public static final String COLUMN_course= "Course";
+    public static final String COLUMN_name= "Names";
+
+    public static final String TABLE_INFO = "Info";
+    public static final String COLUMN_unit= "Unit";
+    public static final String COLUMN_lecturer= "Lecturer";
 
 
     public DBopenHelper(@Nullable Context context) {
@@ -23,9 +28,15 @@ public class DBopenHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
-         String SQL_CreateTable="CREATE TABLE "+TABLE_NAME+"("+
-                _ID+"INTEGER PRIMARY KEY,"+COLUMN_ID+"TEXT UNIQUE NOT NULL,"+COLUMN_course+"TEXT NOT NULL"+");";
+         String SQL_CreateTable="CREATE TABLE IF NOT EXISTS "+TABLE_NAME+"("+
+                _ID+" INTEGER PRIMARY KEY,"+COLUMN_ID+" TEXT UNIQUE NOT NULL,"+COLUMN_name+" TEXT NOT NULL,"+
+                 COLUMN_course+" TEXT NOT NULL"+")";
         sqLiteDatabase.execSQL(SQL_CreateTable);
+
+        String SQL_CreateTable_Info="CREATE TABLE IF NOT EXISTS "+TABLE_INFO+"("
+                +COLUMN_course+" TEXT UNIQUE NOT NULL,"+COLUMN_unit+" TEXT NOT NULL,"+
+                COLUMN_lecturer+" TEXT NOT NULL"+")";
+        sqLiteDatabase.execSQL(SQL_CreateTable_Info);
 
 
     }
